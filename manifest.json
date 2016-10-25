@@ -1,0 +1,40 @@
+{
+	"manifest_version": 2,
+	"name": "Pass",
+	"version": "1.0",
+	
+	"description": "WebExtension for ZX2C4 pass",
+	"homepage_url": "https://github.com/winduptoy",
+	"icons": {
+		"48": "images/pl-48.png",
+		"96": "images/pl-96.png"
+	},
+	
+	"permissions": [
+		"nativeMessaging"
+	],
+	"applications": {
+		"gecko": {
+			"id": "pass@example.org",
+			"strict_min_version": "50.0"
+		}
+	},
+	
+	"browser_action": {
+		"browser_style": true,
+		"default_icon": "images/pl-32.png",
+		"default_title": "Pass",
+		"default_popup": "browser_action/index.html"
+	},
+	
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["constants.js", "content_scripts/filler.js"]
+		}
+	],
+	
+	"background": {
+		"scripts": ["constants.js", "background/pass.js"]
+	}
+}
