@@ -11,12 +11,20 @@
 	},
 	
 	"permissions": [
-		"nativeMessaging"
+		"nativeMessaging",
+		"storage"
 	],
 	"applications": {
 		"gecko": {
 			"id": "pass@example.org",
 			"strict_min_version": "50.0"
+		}
+	},
+	
+	"commands": {
+		"fill": {
+			"suggested_key": { "default": "Ctrl+Shift+F" },
+			"description": "Fill forms."
 		}
 	},
 	
@@ -36,5 +44,9 @@
 	
 	"background": {
 		"scripts": ["constants.js", "background/pass.js"]
+	},
+	
+	"options_ui": {
+		"page": "options/index.html"
 	}
 }

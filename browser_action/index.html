@@ -3,11 +3,58 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<style>
+			html, body {
+				width: 350px;
+				max-height: 500px;
+				margin: 0;
+				padding: 0;
+				
+				font-family: sans-serif;
+				color: black;
+			}
+			
+			#searchContainer {
+				padding: 10px;
+				border-bottom: 1px solid darkgray;
+			}
+			#searchContainer input {
+				width: 100%;
+				border: none;
+				box-sizing: border-box;
+				border-radius: 4px;
+			}
+			
+			ul.category {
+				padding: 0;
+				margin: 0;
+				list-style-type: none;
+			}
+			ul.category .title {
+				font-weight: bold;
+				font-size: 12px;
+				padding: 4px;
+				border-bottom: 1px solid darkgray;
+				background: aliceblue;
+			}
+			ul.category li {
+				font-size: 14px;
+				padding: 6px 4px;
+				border-bottom: 1px solid darkgray;
+				cursor: pointer;
+			}
+			ul.category li:hover {
+				background: gray;
+				color: white;
+			}
+			
+		</style>
 	</head>
 	
 	<body>
 		<div id="app"></div>
 		
+		<script src="lib/mithril.js"></script>
 		<script src="../constants.js"></script>
 		<script src="util.js"></script>
 		<script src="main.js"></script>
