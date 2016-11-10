@@ -45,15 +45,15 @@ function fill(passDoc) {
 	
 	let form = null;
 	
-	for(let name in fields) {
-		let el = document.querySelector('[name=\'' + name + '\']')
+	for(let selector in fields) {
+		let el = document.querySelector(selector);
 		if(!el) continue;
 		if(el.form) form = el.form;
 		
 		el.focus();
-		el.value = fields[name];
-		for(let letter in fields[name]) {
-			simulateKeyPress(el, fields[name][letter]);
+		el.value = fields[selector];
+		for(let letter in fields[selector]) {
+			simulateKeyPress(el, fields[selector][letter]);
 		}
 	}
 	

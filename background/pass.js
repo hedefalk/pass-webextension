@@ -32,16 +32,13 @@ browser.runtime.onConnect.addListener(function(port) {
 					});
 					break;
 				case window.constants.FILL_ENTRY:
-					console.log('filling this guy', message.contents);
-					//TODO: Find the tab
-					
 					browser.tabs.query({currentWindow: true, active: true}, function(tabs) {
 						if(!tabs.length) return;
 						console.log('FOUND TABS');
 						let port = chrome.tabs.connect(tabs[0].id, {name: 'background'});
 						port.postMessage({
 							type: window.constants.FILL_ENTRY,
-							contents: message.contents
+							contents: replaceOTP(message.contents)
 						});
 						port.disconnect();
 					});
@@ -50,6 +47,31 @@ browser.runtime.onConnect.addListener(function(port) {
 		});
 	}
 });
+
+const otpRegex = /otpauth:\/\/([^\/]+)\/.*secret=([^&\n]+).*$/gm;
+
+function replaceOTP(input) {
+	
+	var output = input;
+	
+	var matches;
+	while(matches = otpRegex.exec(output)) {
+		if(matches.length == 3) {
+			// Determine type
+			switch(matches[1]) {
+				case 'totp':
+					console.log('sending', matches[2], 'replacing', matches[0]);
+					let otp = computeTOTP(matches[2]);
+					output = output.replace(matches[0], otp);
+					break;
+				default:
+					// Nothing
+			}
+		}
+	}
+	
+	return output;
+}
 
 browser.commands.onCommand.addListener(function(command) {
 	if(command == window.constants.SHORTCUT_COMMAND) {

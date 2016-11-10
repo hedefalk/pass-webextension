@@ -11,6 +11,7 @@
 	},
 	
 	"permissions": [
+		"tabs",
 		"nativeMessaging",
 		"storage"
 	],
@@ -43,7 +44,12 @@
 	],
 	
 	"background": {
-		"scripts": ["constants.js", "background/pass.js"]
+		"scripts": [
+			"constants.js",
+			"background/lib/jsSHA2.2.0.js",
+			"background/otp.js",
+			"background/pass.js"
+		]
 	},
 	
 	"options_ui": {
