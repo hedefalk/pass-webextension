@@ -1,3 +1,5 @@
+const fieldRegex = /^\s"(.+)":\s*(.*)$/;
+
 function fill(passDoc) {
 	
 	const lines = passDoc.split('\n');
@@ -22,8 +24,10 @@ function fill(passDoc) {
 				parseLine = lines[j];
 				if(parseLine[0] != '\t') break;
 				
-				const items = lines[j].substring(1).split(' ');
-				fields[items[0]] = items[1];
+				const matches = fieldRegex.exec(lines[j]);
+				if(matches && matches.length == 3) {
+					fields[matches[1]] = matches[2];
+				}
 			}
 			continue;
 		}

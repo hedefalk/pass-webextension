@@ -4,7 +4,7 @@
 	"version": "1.0",
 	
 	"description": "WebExtension for ZX2C4 pass",
-	"homepage_url": "https://github.com/winduptoy",
+	"homepage_url": "https://github.com/winduptoy/pass-webextension",
 	"icons": {
 		"48": "images/pl-48.png",
 		"96": "images/pl-96.png"
@@ -17,7 +17,7 @@
 	],
 	"applications": {
 		"gecko": {
-			"id": "pass@example.org",
+			"id": "pass@passwordstore.org",
 			"strict_min_version": "50.0"
 		}
 	},

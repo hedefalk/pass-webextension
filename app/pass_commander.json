@@ -1,7 +1,7 @@
 {
 	"name": "pass_commander",
 	"description": "A long-running, WebExtension compatible command issuer for the ZX2C4 Password Manager",
-	"path": "/home/matt/dev/pass-webextension/app/pass_commander.py",
+	"path": "/opt/pass-webextension/pass_commander.py",
 	"type": "stdio",
-	"allowed_extensions": ["pass@example.org"]
+	"allowed_extensions": ["pass@passwordstore.org"]
 }
