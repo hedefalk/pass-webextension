@@ -44,8 +44,9 @@ fields: |
 
 - [X] Parse pass entries and fill fields
 - [X] Detect, compute, and fill TOTP codes
-- [ ] Detect current domain and show appropriate entries
+- [X] Detect current domain and show appropriate entries
 - [ ] Automatically fill if a single entry for the domain is detected
 - [ ] Search within browser action
 - [ ] Keyboard shortcut
+- [ ] Screenshots
 - [ ] UI for editing entries
