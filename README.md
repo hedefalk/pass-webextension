@@ -6,10 +6,10 @@ Web Extension for Firefox 50+ that integrates with [ZX2C4 pass](https://www.pass
 
 **THE EXTENSION WILL NOT WORK WITHOUT INSTALLING THE MANIFEST**
 
-In order for the extension to communicate with `pass`, you must install an app manifest. [Mozilla's documentation](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Native_messaging#App_manifest) explains more details about the manifest. In addition, there is python helper app that holds the connection to the browser open, making the whole process more reliable (since `pass` typically exits immediately).
+In order for the extension to communicate with `pass`, you must install an app manifest. [Mozilla's documentation](https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Native_messaging#App_manifest) explains more details about the manifest. In addition, there is Python helper app that holds the connection to the browser open, making the whole process more reliable (since `pass` typically exits immediately).
 
 - Place `app/pass_commander.json` in `~/.mozilla/native-messaging-hosts`.
-- Place `pass_commander.py` in `/opt/pass-webextension`.
+- Place `app/pass_commander.py` in `/opt/pass-webextension`.
 
 ## Entry Format
 
